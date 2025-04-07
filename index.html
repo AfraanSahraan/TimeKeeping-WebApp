@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Work Hours Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Work Hours Tracker</h1>
+        </header>
+        <main>
+            <section class="theme-toggle">
+                <label class="custom-toggle">
+                    <input type="checkbox" id="darkModeToggle">
+                    <span class="toggle-slider"></span>
+                </label>
+                <span>Dark Mode</span>
+            </section>
+            <section class="input-section">
+                <h2>Manual Input</h2>
+                <div class="input-row">
+                    <label for="manualDate">Date:</label>
+                    <input type="text" id="manualDate" placeholder="Select date" readonly>
+                </div>
+                <div class="input-row">
+                    <label for="manualClockIn">Clock In:</label>
+                    <input type="text" id="manualClockIn" placeholder="Select clock in time" readonly>
+                </div>
+                <div class="input-row">
+                    <label for="manualClockOut">Clock Out:</label>
+                    <input type="text" id="manualClockOut" placeholder="Select clock out time" readonly>
+                </div>
+                <button class="btn primary" id="manualSubmitBtn">Submit Time</button>
+            </section>
+            <section class="real-time-section">
+                <h2>Real-Time Tracking</h2>
+                <button class="btn primary" id="clockInBtn">Clock In</button>
+                <button class="btn secondary" id="clockOutBtn" disabled>Clock Out</button>
+                <p id="status"></p>
+                <p id="hoursWorked"></p>
+            </section>
+            <section class="report-section">
+                <h2>Monthly Report</h2>
+                <table id="reportTable">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Clock In/Out</th>
+                            <th>Hours</th>
+                            <th>Minutes</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <button class="btn download-btn" id="downloadReport">Download Report</button>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2025 Design by MASUM - AM ACCOUNTANCY</p>
+        </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="script.js"></script>
+</body>
+</html>

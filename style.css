@@ -1,0 +1,284 @@
+/* Style Reset */
+body, h1, h2, p, button {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    background-color: #e0e0f8; /* Light lavender background for a modern look */
+    color: #2c3e50;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.container {
+    width: 95%;
+    max-width: 650px;
+    background: #ffffff; /* White container for clarity */
+    border-radius: 12px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+header {
+    background-color: #480ca8; /* Primary color for header */
+    padding: 25px;
+    color: white;
+    text-align: center;
+}
+
+header h1 {
+    font-weight: 600;
+    font-size: 1.8em;
+}
+
+main {
+    padding: 25px;
+}
+
+.theme-toggle {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.custom-toggle {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-right: 10px;
+}
+
+.custom-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.toggle-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: background-color 0.4s;
+    border-radius: 34px;
+}
+
+.toggle-slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: transform 0.4s;
+    border-radius: 50%;
+}
+
+input:checked + .toggle-slider {
+    background-color: #480ca8; /* Change this to your preferred active color */
+}
+
+input:checked + .toggle-slider:before {
+    transform: translateX(26px);
+}
+
+h2 {
+    margin-bottom: 15px;
+    color: #480ca8; /* Primary color for section headings */
+    font-weight: 600;
+    border-bottom: 2px solid #480ca8; /* Bottom border to enhance titles */
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.input-section, .real-time-section, .report-section {
+    margin-bottom: 35px;
+    background-color: #f7f7ff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.input-row {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+label {
+    font-weight: 500;
+    color: #333;
+    width: 35%; /* Ensure label aligns neatly */
+}
+
+input {
+    padding: 8px;
+    width: 60%;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    background-color: #ffffff;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #480ca8; /* Highlight border on focus */
+    outline: none; /* Remove default outline */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+}
+
+table th {
+    background-color: #480ca8;
+    color: white;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f7f7ff;
+}
+
+table tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+table tbody tr:hover {
+    background-color: #dcdcdc; /* Highlight row on hover */
+}
+
+.btn {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn.primary {
+    background-color: #480ca8; /* Primary button color */
+    color: white;
+}
+
+.btn.primary:hover {
+    background-color: #37088c; /* Slightly darker hover effect */
+    transform: scale(1.03); /* Subtle hover animation */
+}
+
+.btn.primary:active {
+    transform: scale(0.98); /* Pressed effect */
+}
+
+.btn.secondary {
+    background-color: #e74c3c; /* Red for secondary buttons */
+    color: white;
+}
+
+.btn.secondary:hover {
+    background-color: #c43a2b;
+    transform: scale(1.03);
+}
+
+.btn.secondary:active {
+    transform: scale(0.98); /* Pressed effect */
+}
+
+.btn.download-btn {
+    background-color: #27ae60; /* Green for download button */
+    color: white;
+}
+
+.btn.download-btn:hover {
+    background-color: #1f8e50;
+    transform: scale(1.03);
+}
+
+.btn.download-btn:active {
+    transform: scale(0.98); /* Pressed effect */
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #480ca8; /* Footer color matches theme */
+    color: white;
+    font-weight: 500;
+    font-size: 0.9em;
+    border-top: 2px solid #37088c; /* Subtle divider line */
+}
+
+/* Dark Mode Styles */
+body.dark-mode {
+    background-color: #2c3e50; /* Dark background */
+    color: #ecf0f1; /* Light text color */
+}
+
+body.dark-mode .container {
+    background: #34495e; /* Dark container */
+    border: 2px solid #1abc9c; /* Darker border */
+}
+
+body.dark-mode header {
+    background-color: #1abc9c; /* Darker header */
+}
+
+body.dark-mode .input-section, 
+body.dark-mode .real-time-section, 
+body.dark-mode .report-section {
+    background-color: #2c3e50; /* Darker section background */
+}
+
+body.dark-mode .btn.primary {
+    background-color: #1abc9c; /* Darker primary button */
+}
+
+body.dark-mode .btn.secondary {
+    background-color: #c0392b; /* Darker secondary button */
+}
+
+body.dark-mode .btn.download-btn {
+    background-color: #27ae60; /* Darker download button */
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 600px) {
+    .input-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    label {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    input {
+        width: 100%;
+    }
+}
